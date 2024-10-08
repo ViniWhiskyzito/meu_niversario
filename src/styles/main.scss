@@ -1,0 +1,153 @@
+@use 'hero';
+@use 'components/infos_bar';
+@use 'components/buttons';
+@use 'event';
+@use 'variables';
+
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, Roboto;
+    color: variables.$textColor;
+    list-style: none;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width:640px) {
+        max-width: 80%;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 90%;
+    }
+}
+
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero__text {
+        font-size: 1.2em;
+    }
+
+    .infos-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event__details, .event__image {
+        width: 100%;
+    }
+
+    .event__details__title {
+        font-size: 1.8em;
+    }
+
+    .event__details__description {
+        font-size: 1em;
+    }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 480px) {
+    .hero__logo {
+        max-width: 100px;
+    }
+
+    .hero__text {
+        font-size: 1em;
+    }
+
+    .event__details__title {
+        font-size: 1.5em;
+    }
+
+    .event__details__description {
+        font-size: 0.9em;
+    }
+}
+
+
+footer {
+    background: #58091d;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 10px;
+        font-size: 0.9em; /* Reduz o tamanho da fonte para caber melhor em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 10px 5px;
+        font-size: 0.8em; /* Tamanho de fonte ainda menor para telas bem pequenas */
+    }
+}
+
+
+
+
+/* Ajustes de responsividade para telas menores */
+@media (max-width: 768px) {
+    .infos-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .infos-bar__infos {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .infos-bar__infos__intem {
+        flex: 1 1 auto; /* Ocupa toda a largura disponível */
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .button--primary {
+        width: 80%;
+        max-width: 200px;
+        margin: 20px auto; /* Centraliza o botão em telas pequenas */
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .infos-bar__infos__intem {
+        font-size: 0.9em;
+        margin: 8px 0;
+    }
+
+    .button--primary {
+        width: 100%; /* Ocupa toda a largura disponível */
+        max-width: 250px;
+    }
+}
